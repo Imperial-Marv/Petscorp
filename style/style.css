@@ -1,0 +1,201 @@
+body{
+    background-color: coral;
+}
+title{
+    text-align: center;
+}
+#logo-pagina{
+    height: 75px;
+    width: 60px;    
+}
+#textos-barra{
+    text-align: 10%;
+}
+#barra-central{
+    height: 100%;
+    
+}
+#barra-secundaria{
+    background-color:coral ; 
+    padding-top: 10px;
+    border: 1px  ;
+    border-radius: 7px;
+}
+#demo{
+    padding-bottom: 10px;
+}
+
+nav ul {
+    /*El list-style-type es para eliminar los puntos de la lista*/
+    list-style-type: none;
+    
+}
+
+/*Hacer que cuando uno pase el mouse por el menu se vea una forma redondeada y de color coral*/
+nav li:hover{
+    background: coral;
+    border-radius: 50px;
+}
+
+/*ajustar el submenu de forma que quede al centro*/
+#submenu {
+    padding-left: 0%;
+    padding-right: 0%;
+    text-align: center;
+}
+
+
+
+
+
+
+.footer .social > a{
+    font-size: 24px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100%;
+    border: 4px solid black;
+    margin: 20px 14px -4px;
+    color: inherit;
+}
+
+
+a{
+    text-decoration: underline;
+    color: #0d6efd;
+}
+
+a:hover{
+    
+    color: blue;
+}
+
+.footer .social{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+
+.footer{
+    padding: 4px 0px ;
+    background-color: coral ;
+    color: black ;
+    
+    
+}
+
+/*quitar el color de los links*/
+.items-menu{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+
+
+.footer .copyright{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 0;
+}
+
+p{
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+
+
+
+/*para hacer mas grandes las flechas*/
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    /*hacer un circulo en las flechas y de color coral*/
+    border-radius: 50%;
+    background-color: coral;
+}
+
+
+/*ajustar el tamaño de la imagen de las redes sociales*/
+#instagram{
+    width: 70%;
+    height: 70%;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+/*ajustar el tamaño de la imagen de las redes sociales*/
+#facebook{
+    width: 70%;
+    height: 70%;
+    margin-top: 10px;
+    margin-bottom: 60px; 
+}
+
+/*ajustar el tamaño de la imagen de las redes sociales*/
+#twitter{
+    width: 70%;
+    height: 70%;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+/*ajustar el tamaño de la imagen de las redes sociales*/
+#Whastsapp{
+    width: 70%;
+    height: 70%;
+    margin-top: 10px;
+    margin-bottom: 60px; 
+}
+
+/*ajustar el tamaño de la imagen de las redes sociales*/
+#telephone,#tel{
+    display: inline;
+    width:  20px;
+    height: 20px;
+    margin: auto;
+}
+
+
+#texto-principal{
+    text-align: center;
+    color: rgb(121, 64, 43);
+}
+#bajada{
+    margin-bottom: 10px;
+}
+
+/*PARA LAS IMAGENES DE LOS PERRITOS "ITEMS"*/
+#img_obs{
+	height: 150px;
+    width: 100%;
+    object-fit: contain;
+}
+
+#titulo-fundacion{
+    text-align: center;
+}
+
+#img_detalle{
+    object-fit: contain;
+    height: 250px;
+    width: 100%;
+}
+
+
+#cerrar-sesion{
+    color: inherit;
+    padding-left: 0%;
+}
+
+#titulo-productos {
+    text-align: center;
+}
