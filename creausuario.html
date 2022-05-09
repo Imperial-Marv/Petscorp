@@ -22,33 +22,43 @@
         <div class="imgcontainer">
           <div id="titulo-principal"><h1>¡¡Bienvenido!!</h1></div>
           <div id="titulo-principal"><h3>PetsCorp</h3></div>
-          <img src="img/perritogif.gif" alt="Avatar" class="avatar" height="350">
+          <img src="img/shiver-mr-wolf.gif" alt="Avatar" class="avatar" height="350">
         </div>
         <div class="container">
           <label for="usuario"><b>Usuario</b></label>
-          <input type="text" placeholder="ingrese Usuario" name="usuario" required>
+          <input type="text" placeholder="Ingrese usuario" name="usuario" required>
       
-          <label for="psw"><b>Contraseña</b></label>
-          <input type="password" placeholder="Ingrese Contraseña" name="contraseña" required>
+          <div class="form-group">
+            <label for="Password">Contraseña</label>
+            <input type="password" class="form-control" id="Password" placeholder="Ingrese una Contraseña">
+          </div>
 
-          <a href="index0.html"> <button>Ingresar</button> 
-            
-            <label>
-              <input type="checkbox" checked="checked" name="remember"> Recuerdame 
-            </label>
+          <div class="form-group">
+            <label for="Email">Correo</label>
+            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Ingrese su correo" required>
+            <small id="emailHelp" class="form-text text-muted">No compartiremos tu correo con nadie</small>
+          </div>
 
-            <a href="creausuario.html" style="float: right;">Crear cuenta</a>
-          
-          
+
+         
+          <label for="direccion"><b>Direccion</b></label> 
+          <input type="text" placeholder="Ingrese direccion" name="direccion" required>
+
+          <div class="alert alert-warning" role="alert">
+            Recuerda ingresar tu comuna! Ejemplo: (Vivaceta 336 DP 12, San Bernardo)
+          </div>
+
         
+          <button class= "loginpage" type="submit" >Ingresar</button>
+          
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Recuerdame
+          </label>
         </div>
       
         <div class="container" style="background-color:rgb(255, 255, 255)">
-          
           <button type="button" class="cancelbtn"><a href="index.html">Regresar</a></button>
-
-          <span class="psw"> Restablecer <a href="https://mail.google.com/"> Contraseña? </a></span>
-
+        
         </div>
       </form> 
     </div>
@@ -71,7 +81,7 @@
            </dd>
          </dl>
          <div class="col-sm-12">
-           <p class="copyright">PetsCorp company © 2022</p>
+           <p class="copyright">Duoc company © 2022</p>
          </div>
        </div>
       </footer>
