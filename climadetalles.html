@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=yes">
+    <title>Petscorp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="img/badguylogo.PNG">
+    <script src="JS/script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    
+
+</head>
+<body>
+  <div class="container" style="height: 100%;">
+    <div class="row">
+      <div class="col-sm-1" id="barra-izquierda">
+      </div>
+        <div class="col-sm-12" style="background-color:rgb(253, 253, 253) ;" id="barra-central">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar" href="#">
+              <img src="img/PerroLogo.png" alt="perrologo" id="logo-pagina">
+            </a>
+            <div id="titulo-principal"><h2>PetsCorp</h2></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+              </span>
+            </button>
+                  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      
+              <!--Menu Navbar-->       
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html" id="textos-barra">Inicio 
+                      
+                    <span class="sr-only">(current)
+                    </span>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="quienes_somos.html">Quienes somos</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" 
+                    href="#" 
+                    id="navbarDropdown" 
+                    role="button" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                    Catalogo
+                  </a>
+
+                  <!--Submenu-->
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                    <ul id="submenu">  
+                      <li><a href="perro.html" class="items-menu">perros</a></li>
+                      <li><a href="gato.html" class="items-menu">Gatos</a></li>
+                      
+                    </ul>
+                  </div>
+                </li>
+
+              </ul>
+              <a class="nav-link" href="login.html" id="cerrar-sesion">Cerrar sesion
+              </a>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+              </form>
+            </div>
+          </nav>
+
+ 
+          <div class="container-fluid">
+            <div class="row">
+                <h1 id="titulo-fundacion">Clima de tu ubicación</h1>
+                <br>
+                <p id="texto-principal">
+                    Pasea a tu mascota con tranquilidad gracias a nuestra funcion que puede mostrar el clima de tu sector
+                    ,sea un frio invierno o un caluroso verano sale preparado!
+            </div>
+            
+            <div class="row g-2">
+                <div class="col-md-12 text-center">
+                    <button class="loginpage" id="btnLocalizar">Localizar</button>
+                </div>
+                <div class="col-md-4">
+                    <div id="resultado"></div>
+                </div>
+    
+                <footer>
+                    <div class="row g-2">
+                        <div class=""></div>
+                    </div>
+                </footer>
+    
+            </div>
+            
+            <script>
+              
+                    var x = document.getElementById("resultado");
+        
+                    $("#btnLocalizar").click(function () {
+                        navigator.geolocation.getCurrentPosition(function (position) {
+                            let lat = position.coords.latitude;
+                            let long = position.coords.longitude;
+        
+                            $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&lang=sp&units=metric&appid=e7f7bdc257804d7dd9bc1b7af07e2a26", function (data) {
+                                console.log(data);
+                                $("#resultado").empty();
+                                $("#resultado").append("<p>");
+                                $("#resultado").append("<li>Codigo Pais: " + data.sys.country + "</li>");
+                                $("#resultado").append("<li>Ciudad/Comuna :" + data.name + "</li>");
+                                $("#resultado").append("<li>Latitud:" + data.coord.lat + "</li>");
+                                $("#resultado").append("<li>Longitud:" + data.coord.lon + "</li>");
+                                if (data.weather[0].main == "Clear") {
+                                    $("#resultado").append("<li>Clima actual: Despejado</li>");
+                                }else if(data.weather[0].main == "Cloudy"){                            
+                                    $("#resultado").append("<li>Clima actual: Nublado</li>");
+                                }else{          
+                                    $("#resultado").append("<li>Clima actual: "+data.weather[0].main+"</li>");                            
+                                }
+                                $("#resultado").append("<li>Temperatura Actual:" + Math.round(data.main.temp) + "</li>");
+                                $("#resultado").append("<li>Temperatura Minima:" + Math.round(data.main.temp_min) + "</li>");
+                                $("#resultado").append("<li>Temperatura Maxima:" + Math.round(data.main.temp_max) + "</li>");
+                                $("#resultado").append("<p>");
+                                  
+
+                                  
+                            });
+                        });
+                    });
+        
+        
+                </script>
+
+
+
+          <!--pie de pagina-->
+                <br>
+          <div class="col-sm-12" id="barra-secundaria">
+            <footer class="footer" id="bajada">
+              <div class="social">
+                <a href="https://www.instagram.com/?hl=es"><img src="img/instagram.png" alt="instagram" id="instagram"></a>
+                <a href="https://es-la.facebook.com/"><img src="img/facebook.png" alt="facebook" id="facebook"></a>
+                <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZXMifQ%3D%3D%22%7D"><img src="img/twitter.png" alt="twitter"   id="twitter"></a>
+                <a href="https://web.whatsapp.com/"><img src="img/whatsapp.png" alt="Whastsapp" id="Whastsapp"></a>
+              </div>
+              <dl>
+                <dt id="tel">TELEFONO       </dt><a href="#"><img src="img/telephone.png" alt="telephone" id="telephone"></a>
+                <dd>
+                  <a href="tel:+56 9 55555555">(+56 9 5555555)</a>
+                </dd>
+              </dl>
+              
+
+              <p class="copyright">Petscorp inc. 2022</p>
+
+            </footer>
+          </div>
+      
+        </div>
+        <div class="col-sm-1" id="barra-derecha" >
+        </div>
+    </div>
+  </div>
+</body>
+</html>
