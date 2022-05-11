@@ -29,8 +29,18 @@
             <div class="row g-2">
                 <div class="col-md-4">
 
-                    <button type=button class="btn btn-success" name="btnConectar"
-                        onclick="funcion aqui()">Listar usuarios registrados</button>
+                      <button type="button" class="btn btn-success" name="btnConectar"
+                        onclick=" function listar(idUsuario,usuario){
+                            var result= '';
+                            for (var i in idUsuario){
+                                if (usuario.hasOwnProperty(i)){
+                                    result = usuario.user+ +usuario.pass+ +usuario.direct+"+usuario.mail;
+                                    console.log(result);
+                                }
+                            }
+                            return result;
+                    
+                        }>Listar usuarios registrados</button>
                 </div>
             </div>
             <div class="row g-10">
