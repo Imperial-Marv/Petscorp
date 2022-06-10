@@ -20,3 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
 ]
+
+#cambio de titulos porque me gusta el front end sjsjjsjs
+admin.site.site_header = 'Administracion Petscorp'
+admin.site.site_title= 'Petscorp'
+admin.site.index_title = 'Bienvenido!'

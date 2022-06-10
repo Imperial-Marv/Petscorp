@@ -82,6 +82,9 @@ DATABASES = {
         'PASSWORD': 'Loco12345***',
         'HOST': 'database-1.cb2tol7xtfes.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
