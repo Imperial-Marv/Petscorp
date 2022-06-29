@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'core',
+    'rest_donadores',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +73,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TestDjango.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
